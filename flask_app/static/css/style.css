@@ -1,0 +1,17 @@
+.nav_img {
+    height: 3rem;
+}
+
+body {
+    height: 100vh;
+    /* background-image: url(/static/imgs/admin.jpg); */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+.login {
+    background-color: #eec49b;
+    opacity: .8;
+}
