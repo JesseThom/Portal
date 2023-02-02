@@ -5,5 +5,6 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 
 app.secret_key = 'its a secret to everybody'
-app.upload_folder = '/Users/MSI/Desktop/python/Portal/flask_app/static/imgs/paystubs'
+# app.upload_folder = '/Users/MSI/Desktop/python/Portal/flask_app/static/imgs/paystubs'
+app.upload_folder = '/home/ubuntu/Portal/flask_app/static/imgs/paystubs'
 DATABASE = "nld_db"#TODO change schema name 

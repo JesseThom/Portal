@@ -22,7 +22,7 @@ def bank_new(employee_id):
 def bank_create(employee_id,id):
 
     if not Bank.validate(request.form):
-        return redirect(f'/employee/{employee_id}/bank/edit')
+        return redirect(f'/employee/{employee_id}/bank/new')
 
     encrypted_data = {
         'bank_name':encrypt(request.form['bank_name']),
