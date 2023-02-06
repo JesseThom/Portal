@@ -46,7 +46,7 @@
             <!-- <h4>Processed:</h4> -->
             {%if timecard.processed == 1%}
             <h4>Processed: Yes</h4>
-            <!-- <a class="btn btn-danger" href="/{{timecard.id}}/{{timecard.processed}}/unprocess">unProcess</a> -->
+            <a class="btn btn-danger" href="/{{timecard.id}}/{{timecard.processed}}/unprocess">unProcess</a>
             {%else%}
             <h4>Processed: No</h4>
             <a class="btn btn-warning" href="/admin/employee/{{timecard.user.employee_id}}/timecard/{{timecard.id}}/{{timecard.processed}}/paystub">Create Paystub</a>

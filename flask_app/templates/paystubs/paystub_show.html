@@ -39,7 +39,8 @@ body {
         </nav>
     </div>
     <div class="mx-auto mt-5">
-        <img class="d-block mx-auto" src="/static/imgs/paystubs/{{paystub.url}}" alt="">
+        <img class="d-block mx-auto" src="https://{{bucket}}.s3.us-east-2.amazonaws.com/{{paystub.url}}" alt="">
+        <!-- <img class="d-block mx-auto" src="/static/imgs/paystubs/{{paystub.url}}" alt=""> -->
     </div>
 
 </body>

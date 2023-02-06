@@ -157,6 +157,13 @@ class Timecard:
 
         return connectToMySQL(DATABASE).query_db(query,data)
 
+#D
+    @classmethod
+    def delete_all_by_user_id(cls,data):
+        query = "DELETE FROM timecards WHERE user_id = %(user_id)s;"
+
+        return connectToMySQL(DATABASE).query_db(query,data)
+
 
 
     # @classmethod

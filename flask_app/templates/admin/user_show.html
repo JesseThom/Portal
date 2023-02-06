@@ -64,17 +64,20 @@
     <div class="w-50 bg-white mx-auto mt-5">
         <nav class="navbar px-3 ">
             <h3>Paystubs</h3>
-            <!-- <a class="btn btn-success" href="/admin/employee/{{user.employee_id}}/paystub/new">Add</a> -->
         </nav>
 
         <table class="table">
             <thead class="bg-dark-subtle">
                 <th>Document Name</th>
-                <th>Link</th>
+                <th>Date Posted</th>
+                <th></th>
+                <th></th>
             </thead>
             {% for paystub in paystubs %}
             <tr>
                 <td>{{paystub.name}}</td>
+                <td>{{paystub.created_at.strftime("%x")}}</td>
+                <td><a href="https://{{bucket}}.s3.us-east-2.amazonaws.com/{{paystub.url}}">download</a></td>
                 <td><a href="/paystub/{{paystub.id}}/show">view</a></td>
             </tr>
             {% endfor %}
@@ -82,7 +85,7 @@
     </div>
 
 <!-- bank info -->
-    <div class="w-50 bg-white mx-auto mt-5">
+    <!-- <div class="w-50 bg-white mx-auto mt-5">
         <table class="table">
             <thead class="bg-dark-subtle">
                 <th>Bank Name</th>
@@ -105,7 +108,6 @@
             {%endif%}
             {%endif%}
         </table>
-    </div>
+    </div> -->
 </body>
-
 </html>

@@ -42,7 +42,7 @@
         <nav class="navbar px-3 bg-dark-subtle ">
             <h3 class="mx-auto">Edit Bank Info</h3>
         </nav>
-            <form action="/bank/{{user.employee_id}}/{{user.id}}/create" method="post">
+            <form action="/bank/{{user.bank.id}}/update" method="post">
                 <div class="mt-2 mx-auto w-50">
                     <label class="form-label" for="bank_name">Bank Name: </label>
                     <input class="form-control " type="text" name="bank_name" value = "{{user.bank.bank_name}}">

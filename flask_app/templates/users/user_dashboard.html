@@ -20,8 +20,8 @@
 <body>
     <div class="bg-white">
         <nav class="navbar w-75 mx-auto">
-            <img class="nav_img ms-5" src="/static/imgs/nld_color.png" alt="">
-            <h2>NLD Employee Portal</h2>
+            <img class="nav_img " src="/static/imgs/nld_color.png" alt="">
+            <h2 class="sm-none">NLD Employee Portal</h2>
             <div class="navbar">
                 <h2 class="me-5">{{user.first_name}} {{user.last_name}}</h2>
                 <a class="btn btn-info" href="/user/logout">logout</a>
@@ -29,7 +29,7 @@
         </nav>
     </div>
 <!-- time card table -->
-    <div class="w-50 bg-white mx-auto mt-5">
+    <div class="content bg-white mx-auto mt-5">
         <nav class="navbar px-3 bg-dark-subtle">
             <h3>Timecards</h3>
             <a class="btn btn-success" href="/timecard/{{user.id}}/new">Add Timecard</a>
@@ -54,7 +54,7 @@
                 <td class="text-center">
                     <a href="/employee/{{user.employee_id}}/timecard/{{timecard.id}}">view</a>
                     {%if timecard.processed == 0%}
-                    <a class="mx-5" href="/employee/{{user.employee_id}}/timecard/{{timecard.id}}/edit">edit</a>
+                    <a class="mx-md-5" href="/employee/{{user.employee_id}}/timecard/{{timecard.id}}/edit">edit</a>
                     <a href="/timecard/{{timecard.id}}/delete">delete</a>
                     {%endif%}
                 </td>
@@ -65,7 +65,7 @@
     </div>
 
 <!-- paystub table -->
-<div class="w-50 bg-white mx-auto mt-5">
+<div class="content bg-white mx-auto mt-5">
     <nav class="navbar px-3 bg-dark-subtle">
         <h3>Paystubs</h3>
     </nav>
@@ -78,6 +78,7 @@
         {% for paystub in paystubs %}
         <tr>
             <td>{{paystub.name}}</td>
+            <td><a href="https://{{bucket}}.s3.us-east-2.amazonaws.com/{{paystub.url}}">download</a></td>
             <td><a href="/paystub/{{paystub.id}}/show">view</a></td>
         </tr>
         {% endfor %}
@@ -85,7 +86,7 @@
 </div>
 
 <!-- bank info -->
-    <div class="w-50 bg-white mx-auto mt-5">
+    <!-- <div class="content bg-white mx-auto mt-5">
         <table class="table">
             <thead class="bg-dark-subtle">
                 <th>Bank Name</th>
@@ -108,7 +109,7 @@
             {%endif%}
             {%endif%}
         </table>
-    </div>
+    </div> -->
 
 </body>
 

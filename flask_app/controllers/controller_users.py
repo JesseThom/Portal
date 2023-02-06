@@ -1,5 +1,5 @@
 from flask import render_template, redirect, session, request
-from flask_app import app, bcrypt
+from flask_app import app, bcrypt,BUCKET
 # from flask_app.config.helpers import encrypt,decrypt
 # from cryptography.fernet import Fernet
 
@@ -112,7 +112,7 @@ def dashboard():
     user = User.get_one_with_bank({'employee_id': session['employee_id']})
     paystubs = Paystub.get_all_by_employee_id({'employee_id':session['employee_id']})
 
-    return render_template("/users/user_dashboard.html",user=user,timecards=timecards,paystubs=paystubs)
+    return render_template("/users/user_dashboard.html",user=user,timecards=timecards,paystubs=paystubs,bucket=BUCKET)
 
 #route to show all employees under admin
 @app.route('/admin/employee/<employee_id>')
@@ -126,7 +126,7 @@ def user_show(employee_id):
     timecards = Timecard.get_all_by_user_id({'user_id':user.id})
     paystubs = Paystub.get_all_by_employee_id({'employee_id':employee_id})
 
-    return render_template("/admin/user_show.html",user=user,timecards=timecards,paystubs=paystubs)
+    return render_template("/admin/user_show.html",user=user,timecards=timecards,paystubs=paystubs,bucket=BUCKET)
 
 #logout
 @app.route('/user/logout')
